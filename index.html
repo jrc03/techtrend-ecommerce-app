@@ -15,6 +15,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
+  <script src="main.js"></script>
   </head>
   <body>
     <header>
@@ -29,16 +30,16 @@
         </nav>
       </div>
       <div class="headerRight">
-        <button type="button" class="icon" id="search">
-          <i class="fa-solid fa-magnifying-glass"></i>
-        </button>
-        <button type="button" class="icon" id="user">
-          <i class="fa-solid fa-user"></i>
-        </button>
-        <button type="button" class="icon" id="shopping-cart">
-          <i class="fa-solid fa-cart-shopping"></i>
-        </button>
-      </div>
+    <button type="button" class="icon" id="search" aria-label="Buscar">
+        <i class="fa-solid fa-magnifying-glass"></i>
+    </button>
+    <button type="button" class="icon" id="user" aria-label="Menú de usuario">
+        <i class="fa-solid fa-user"></i>
+    </button>
+    <button type="button" class="icon" id="shopping-cart" aria-label="Carrito de compras">
+        <i class="fa-solid fa-cart-shopping"></i>
+    </button>
+</div>
     </header>
 
     <main>
@@ -119,7 +120,7 @@
         <div class="laptop-grid">
           <div class="laptop-card">
             <img
-              src="imgs/dell-xps.png"
+              src="imgs/laptops/dellxps.png"
               alt="Dell XPS"
               class="laptop-card-img"
             />
@@ -129,7 +130,7 @@
 
           <div class="laptop-card">
             <img
-              src="imgs/razer-blade.png"
+              src="imgs/laptops/razer-blade.png"
               alt="Razer Blade"
               class="laptop-card-img"
             />
@@ -139,7 +140,7 @@
 
           <div class="laptop-card">
             <img
-              src="imgs/asus-rog.png"
+              src="imgs/laptops/rog-asus.png"
               alt="Asus ROG Strix"
               class="laptop-card-img"
             />
@@ -149,7 +150,7 @@
 
           <div class="laptop-card">
             <img
-              src="imgs/macbook-air.png"
+              src="imgs/laptops/macbook-air.png"
               alt="Macbook Air"
               class="laptop-card-img"
             />
@@ -183,7 +184,7 @@
         <div class="watch-grid">
           <div class="watch-card">
             <img
-              src="imgs/watch-1.png"
+              src="imgs/relojes/apple-watch.png"
               alt="Apple Watch Series 9"
               class="watch-card-img"
             />
@@ -193,7 +194,7 @@
 
           <div class="watch-card">
             <img
-              src="imgs/watch-2.png"
+              src="imgs/relojes/apple-watch.png"
               alt="Apple Watch Ultra"
               class="watch-card-img"
             />
@@ -203,7 +204,7 @@
 
           <div class="watch-card">
             <img
-              src="imgs/watch-3.png"
+              src="imgs/relojes/apple-watch.png"
               alt="Apple Watch SE"
               class="watch-card-img"
             />
@@ -213,7 +214,7 @@
 
           <div class="watch-card">
             <img
-              src="imgs/watch-4.png"
+              src="imgs/relojes/apple-watch.png"
               alt="Apple Watch Hermès"
               class="watch-card-img"
             />
@@ -224,6 +225,23 @@
 
         <button type="button" class="btn-ver-mas">Ver mas</button>
       </section>
+      <section class="testimonios">
+        <h2>Testimonios</h2>
+        <div class="test-grid">
+          <div class="test-card">
+            <h3 class="test-card-name">Jose Rincon</h3>
+            <p class="test-card-desc">“¡El iPhone 17 llegó en menos de 24 horas! La calidad y el precio son increíbles”</p>
+          </div>
+          <div class="test-card">
+            <h3 class="test-card-name">Samuel Marte</h3>
+            <p class="test-card-desc">“Compré mi MacBook Air y el soporte fue excelente. Lo recomiendo totalmente.”</p>
+          </div>
+        </div>
+      </section>
     </main>
+    <footer>
+      <p class="footer-text">TechTrend - Todos los derechos reservados</p>
+      <p class="footer-text">Correo: info@techtrend.com</p>
+    </footer>
   </body>
 </html>
