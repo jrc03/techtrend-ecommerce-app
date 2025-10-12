@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TechTrend</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="headerLeft">
+        <h2><a href="index.html">TechTrend</a></h2>
+        <nav>
+          <button type="button" class="btnNav">Comprar</button>
+          <button type="button" class="btnNav">Teléfonos Móviles</button>
+          <button type="button" class="btnNav">Laptops</button>
+          <button type="button" class="btnNav">Relojes</button>
+          <button type="button" class="btnNav">Soporte</button>
+        </nav>
+      </div>
+      <div class="headerRight">
+        <button type="button" class="icon" id="search">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+        <button type="button" class="icon" id="user">
+          <i class="fa-solid fa-user"></i>
+        </button>
+        <button type="button" class="icon" id="shopping-cart">
+          <i class="fa-solid fa-cart-shopping"></i>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <!-- Primera sección: Hero/Featured -->
+      <section class="phone-featured">
+        <div class="phone-container">
+          <img
+            src="imgs//phones/Rectangle 1.png"
+            alt="Image of an Iphone 17 Pro"
+            class="phone-img"
+          />
+          <div class="phone-overlay">
+            <h1 class="phone-title">IPHONE 17 PRO</h1>
+            <div class="phone-buttons">
+              <button type="button" class="btn-secondary">Saber mas</button>
+              <button type="button" class="btn-primary">Comprar</button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Segunda sección: Productos -->
+      <section class="phone-products">
+        <div class="phone-grid">
+          <div class="phone-card">
+            <img
+              src="imgs/phones/Rectangle 3.png"
+              alt="Imagen de un telefono movil"
+            />
+            <h3 class="phone-card-name">IPHONE AIR</h3>
+            <p class="phone-card-price">$999</p>
+          </div>
+          <div class="phone-card">
+            <img
+              src="imgs/phones/Rectangle 4.png"
+              alt="Imagen de un telefono movil"
+            />
+            <h3 class="phone-card-name">SAMSUNG GALAXY S25</h3>
+            <p class="phone-card-price">$999</p>
+          </div>
+          <div class="phone-card">
+            <img
+              src="imgs/phones/Rectangle 5.png"
+              alt="Imagen de un telefono movil"
+            />
+            <h3 class="phone-card-name">IPHONE 17</h3>
+            <p class="phone-card-price">$999</p>
+          </div>
+          <div class="phone-card">
+            <img
+              src="imgs/phones/Rectangle 6.png"
+              alt="Imagen de un telefono movil"
+            />
+            <h3 class="phone-card-name">SAMSUNG GALAXY FOLD</h3>
+            <p class="phone-card-price">$999</p>
+          </div>
+        </div>
+        <button type="button" class="btn-ver-mas">Ver mas</button>
+      </section>
+      <!-- Sección de Laptops -->
+      <section class="laptop-featured">
+        <div class="laptop-container">
+          <img
+            src="imgs/laptops/Apple-MacBook-Pro-2up-231030_Full-Bleed-Image.jpg.large_2x-1067680879.jpg"
+            alt="Image of a Macbook Pro"
+            class="laptop-img"
+          />
+          <div class="laptop-overlay">
+            <h1 class="laptop-title">MACBOOK PRO</h1>
+            <div class="laptop-buttons">
+              <button type="button" class="btn-secondary">Saber mas</button>
+              <button type="button" class="btn-primary">Comprar</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="laptop-products">
+        <div class="laptop-grid">
+          <div class="laptop-card">
+            <img
+              src="imgs/dell-xps.png"
+              alt="Dell XPS"
+              class="laptop-card-img"
+            />
+            <h3 class="laptop-card-name">DELL XPS</h3>
+            <p class="laptop-card-price">$999</p>
+          </div>
+
+          <div class="laptop-card">
+            <img
+              src="imgs/razer-blade.png"
+              alt="Razer Blade"
+              class="laptop-card-img"
+            />
+            <h3 class="laptop-card-name">RAZER BLADE</h3>
+            <p class="laptop-card-price">$999</p>
+          </div>
+
+          <div class="laptop-card">
+            <img
+              src="imgs/asus-rog.png"
+              alt="Asus ROG Strix"
+              class="laptop-card-img"
+            />
+            <h3 class="laptop-card-name">ASUS ROG STRIX</h3>
+            <p class="laptop-card-price">$999</p>
+          </div>
+
+          <div class="laptop-card">
+            <img
+              src="imgs/macbook-air.png"
+              alt="Macbook Air"
+              class="laptop-card-img"
+            />
+            <h3 class="laptop-card-name">MACBOOK AIR</h3>
+            <p class="laptop-card-price">$999</p>
+          </div>
+        </div>
+
+        <button type="button" class="btn-ver-mas">Ver mas</button>
+      </section>
+
+      <!-- Sección de Relojes -->
+      <section class="watch-featured">
+        <div class="watch-container">
+          <img
+            src="imgs/relojes/Frame 23.png"
+            alt="Image of an Apple Watch"
+            class="watch-img"
+          />
+          <div class="watch-overlay">
+            <h1 class="watch-title">APPLE WATCH</h1>
+            <div class="watch-buttons">
+              <button class="btn-secondary">Saber mas</button>
+              <button class="btn-primary">Comprar</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="watch-products">
+        <div class="watch-grid">
+          <div class="watch-card">
+            <img
+              src="imgs/watch-1.png"
+              alt="Apple Watch Series 9"
+              class="watch-card-img"
+            />
+            <h3 class="watch-card-name">APPLE WATCH SERIES 9</h3>
+            <p class="watch-card-price">$399</p>
+          </div>
+
+          <div class="watch-card">
+            <img
+              src="imgs/watch-2.png"
+              alt="Apple Watch Ultra"
+              class="watch-card-img"
+            />
+            <h3 class="watch-card-name">APPLE WATCH ULTRA</h3>
+            <p class="watch-card-price">$799</p>
+          </div>
+
+          <div class="watch-card">
+            <img
+              src="imgs/watch-3.png"
+              alt="Apple Watch SE"
+              class="watch-card-img"
+            />
+            <h3 class="watch-card-name">APPLE WATCH SE</h3>
+            <p class="watch-card-price">$249</p>
+          </div>
+
+          <div class="watch-card">
+            <img
+              src="imgs/watch-4.png"
+              alt="Apple Watch Hermès"
+              class="watch-card-img"
+            />
+            <h3 class="watch-card-name">APPLE WATCH HERMÈS</h3>
+            <p class="watch-card-price">$1,299</p>
+          </div>
+        </div>
+
+        <button type="button" class="btn-ver-mas">Ver mas</button>
+      </section>
+    </main>
+  </body>
+</html>

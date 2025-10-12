@@ -1,0 +1,527 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --color-primary: #0055B8;
+    --color-primary-dark: #003D82;
+    /* Más oscuro para mejor contraste */
+    --color-primary-light: #E6F2FF;
+    --color-secondary: #6B7280;
+    /* Gris con buen contraste */
+    --color-text: #1F2937;
+    /* Texto más oscuro para mejor legibilidad */
+    --color-text-light: #4B5563;
+    /* Texto secundario accesible */
+    --color-bg: #FFFFFF;
+    --color-bg-alt: #F9FAFB;
+    --color-shadow: rgba(0, 85, 184, 0.1);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    font-family: "Jost", sans-serif;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 40px;
+    margin: 0;
+    background-color: var(--color-bg);
+    box-shadow: 0 2px 10px var(--color-shadow);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.headerLeft {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+
+}
+
+.headerLeft h2 {
+    font-family: "Jost", sans-serif;
+    font-weight: 800;
+    font-size: 1.8rem;
+    color: var(--color-primary);
+    margin: 0;
+    letter-spacing: -0.5px;
+    transition: all 0.3s ease;
+}
+
+.headerLeft h2 a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.headerLeft h2:hover {
+    transform: translateY(-0.5px);
+}
+
+nav {
+    display: flex;
+    gap: 5px;
+}
+
+.btnNav {
+    background-color: transparent;
+    border: 0;
+    font-family: "Jost", sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    padding: 10px 16px;
+    cursor: pointer;
+    color: var(--color-text);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+ 
+}
+
+.btnNav:hover {
+    background-color: var(--color-primary-light);
+    color: var(--color-primary);
+    transform: translateY(-0.5px);
+}
+
+
+.headerRight {
+    display: flex;
+    gap: 8px;
+}
+
+.icon {
+    background: none;
+    border: none;
+    cursor: pointer;
+    width: 46px;
+    height: 46px;
+    border-radius: 8px;
+    color: var(--color-text);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon:hover {
+    background-color: var(--color-primary-light);
+    color: var(--color-primary);
+    transform: translateY(-0.5px);
+}
+
+
+
+.icon svg {
+    width: 32px;
+    height: 32px;
+}
+
+.phone-featured {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.phone-container {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    height: 500px;
+    overflow: hidden;
+}
+
+.phone-img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+.phone-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 35%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.phone-title {
+    justify-self: center;
+    font-family: "Jost", sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: white;
+    margin: 0 0 20px 0;
+    letter-spacing: 2px;
+}
+
+.phone-buttons {
+    display: flex;
+    gap: 15px;
+
+}
+
+.btn-secondary {
+    background-color: rgba(128, 128, 128, 0.8);
+    border: none;
+    color: white;
+    padding: 15px 35px;
+    font-family: "Jost", sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background-color: rgba(128, 128, 128, 1);
+    transform: translateY(-0.5px);
+}
+
+.btn-primary {
+    background-color: #0071e3;
+    border: none;
+    color: white;
+    padding: 15px 35px;
+    font-family: "Jost", sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #0077ed;
+    transform: translateY(-0.5px);
+}
+
+.phone-products {
+    padding: 60px 40px;
+    background-color: #f5f5f5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 16px;
+    text-align: center;
+}
+
+.phone-grid {
+    display: grid;
+    gap: 40px;
+    grid-template-columns: repeat(4, 1fr);
+    width: 70%;
+    justify-content: center;
+    margin-bottom: 80px;
+    max-width: 1400px;
+}
+
+.phone-card {
+    background-color: white;
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.phone-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.phone-card-img {
+    width: 100%;
+    height: 250px;
+    object-fit: contain;
+    margin-bottom: 20px;
+}
+
+.phone-card-name {
+    font-family: "Jost", sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #2d3748;
+    margin: 0 0 10px 0;
+    letter-spacing: 0.5px;
+}
+
+.phone-card-price {
+    font-family: "Jost", sans-serif;
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: #2d3748;
+    margin: 0;
+}
+
+.btn-ver-mas {
+    background-color: var(--color-primary);
+    color: white;
+    border: none;
+    padding: 15px 50px;
+    border-radius: 50px;
+    font-family: "Jost", sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 80px;
+}
+
+.btn-ver-mas:hover {
+    transform: translateY(-0.5px);
+    background-color: var(--color-primary-dark);
+    box-shadow: 0 10px 20px rgba(0, 119, 237, 0.2);
+}
+
+
+/* Laptop Sections */
+.laptop-featured {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.laptop-container {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    height: 600px;
+    overflow: hidden;
+    background-color: #1a1a1a;
+}
+
+.laptop-img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+.laptop-overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 35%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.laptop-title {
+    justify-self: center;
+    font-family: "Jost", sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: white;
+    margin: 0 0 20px 0;
+    letter-spacing: 2px;
+}
+
+.laptop-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.laptop-products {
+    padding: 60px 40px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 16px;
+    text-align: center;
+}
+
+.laptop-grid {
+    display: grid;
+    gap: 40px;
+    grid-template-columns: repeat(4, 1fr);
+    width: 70%;
+    justify-content: center;
+    margin-bottom: 80px;
+    max-width: 1400px;
+}
+
+.laptop-card {
+    background-color: #f5f5f5;
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.laptop-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.laptop-card-img {
+    width: 100%;
+    height: 250px;
+    object-fit: contain;
+    margin-bottom: 20px;
+}
+
+.laptop-card-name {
+    font-family: "Jost", sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #2d3748;
+    margin: 0 0 10px 0;
+    letter-spacing: 0.5px;
+}
+
+.laptop-card-price {
+    font-family: "Jost", sans-serif;
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: #2d3748;
+    margin: 0;
+}
+
+/* Watch Sections */
+.watch-featured {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.watch-container {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    height: 600px;
+    overflow: hidden;
+    background: linear-gradient(135deg, #2d1b3d 0%, #5a3a5e 100%);
+}
+
+.watch-img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+.watch-overlay {
+    position: absolute;
+    top: 0;
+    justify-self: center;
+    width: auto;
+
+    padding: 10px;
+    padding-top: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.watch-title {
+    justify-self: center;
+    font-family: "Jost", sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: white;
+    margin: 0 0 20px 0;
+    letter-spacing: 2px;
+}
+
+.watch-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.watch-products {
+    padding: 60px 40px;
+    background-color: #f5f5f5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 16px;
+    text-align: center;
+}
+
+.watch-grid {
+    display: grid;
+    gap: 40px;
+    grid-template-columns: repeat(4, 1fr);
+    width: 70%;
+    justify-content: center;
+    margin-bottom: 80px;
+    max-width: 1400px;
+}
+
+.watch-card {
+    background-color: white;
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.watch-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.watch-card-img {
+    width: 100%;
+    height: 250px;
+    object-fit: contain;
+    margin-bottom: 20px;
+}
+
+.watch-card-name {
+    font-family: "Jost", sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #2d3748;
+    margin: 0 0 10px 0;
+    letter-spacing: 0.5px;
+}
+
+.watch-card-price {
+    font-family: "Jost", sans-serif;
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: #2d3748;
+    margin: 0;
+}
+
+.icon:active, .btnNav:active, .btn-primary:active, .btn-secondary:active, .btn-ver-mas:active {
+    transform: scale(0.95);
+}
+
+/* Responsive para laptops y watches */
+@media (max-width:1200px) {
+
+    .phone-grid,
+    .laptop-grid,
+    .watch-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+
+    .phone-grid,
+    .laptop-grid,
+    .watch-grid {
+        grid-template-columns: 1fr;
+    }
+}
