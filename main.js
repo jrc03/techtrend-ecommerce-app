@@ -101,5 +101,4 @@ document.addEventListener('DOMContentLoaded', function() {
     document.addEventListener('keydown', cerrarConEscape);
     
     
-    console.log('✅ Menú de usuario inicializado correctamente');
 });

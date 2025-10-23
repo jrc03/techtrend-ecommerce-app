@@ -3,7 +3,11 @@
     --color-bg-input: #595959;
     --color-primary: #0094FF;
 }
-body{background-color: var(--color-bg-login);}
+
+body {
+    background-color: var(--color-bg-login);
+}
+
 main {
     background-color: var(--color-bg-login);
     display: flex;
@@ -91,6 +95,18 @@ input:focus {
 
 .btn-enviar:active {
     transform: translateY(0);
+}
+
+.form-group input.error {
+  outline: 2px solid #e74c3c; 
+  outline-offset: 2px; 
+}
+
+.error-message {
+  color: #e74c3c;
+  font-size: 0.9em;
+  margin-top: 5px;
+  display: none; 
 }
 
 @media (max-width: 768px) {
