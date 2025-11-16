@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const contrasenaInput = document.getElementById("contrasena");
   const direccionInput = document.getElementById("direccion");
 
-  /**
+ /**
    * Muestra un mensaje de error en la UI, asociado a un input.
    * @param {HTMLElement} inputElement - El <input> que tiene el error.
    * @param {string} mensaje - El texto de error que se mostrará.
@@ -20,7 +20,8 @@ document.addEventListener("DOMContentLoaded", function () {
     errorElement.textContent = mensaje;
     errorElement.style.display = "block";
 
-    inputElement.classList.add("error");
+    inputElement.classList.add("error");  
+
   }
 
   /**
@@ -50,6 +51,7 @@ document.addEventListener("DOMContentLoaded", function () {
       return true;
     }
   }
+
 
   function validarCorreo() {
     const valor = correoInput.value.trim();

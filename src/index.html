@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TechTrend</title>
+    <link rel="stylesheet" href="output.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script src="main.js"></script>
+  </head>
+  <body class="body">
+    <header
+      class="flex items-center justify-between py-5 px-10 bg-bg-primary sticky top-0 z-1000 shadow-lg"
+    >
+      <div class="flex items-center gap-10">
+        <h2
+          class="font-extrabold text-3xl text-primary tracking-[-0.5px] transition-all duration-300 ease-in-out hover:translate-y-[-0.5px]"
+        >
+          <a href="index.html">TechTrend</a>
+        </h2>
+        <nav class="flex gap-1">
+          <button type="button" class="nav-btn">Comprar</button>
+          <button type="button" class="nav-btn">Teléfonos Móviles</button>
+          <button type="button" class="nav-btn">Laptops</button>
+          <button type="button" class="nav-btn">Relojes</button>
+          <button type="button" class="nav-btn">Soporte</button>
+        </nav>
+      </div>
+
+      <div class="flex gap-2">
+        <button type="button" class="icon" id="search" aria-label="Buscar">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+        <button
+          type="button"
+          class="icon"
+          id="user"
+          aria-label="Menú de usuario"
+        >
+          <i class="fa-solid fa-user"></i>
+        </button>
+        <button
+          type="button"
+          class="icon"
+          id="shopping-cart"
+          aria-label="Carrito de compras"
+        >
+          <i class="fa-solid fa-cart-shopping"></i>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <!-- Primera sección: Hero/Featured -->
+      <section class="w-full m-0 p-0">
+        <div class="w-full m-0 p-0 relative h-[500px] overflow-hidden">
+          <img
+            src="../imgs/phones/Rectangle 1.png"
+            alt="Image of an Iphone 17 Pro"
+            class="size-full block object-cover"
+          />
+          <div
+            class="absolute top-0 left-0 w-[35%] h-full flex flex-col justify-center items-center"
+          >
+            <h1
+              class="justify-self-center text-4xl font-bold text-white mb-5 tracking-[2px]"
+            >
+              IPHONE 17 PRO
+            </h1>
+            <div class="flex gap-4">
+              <button type="button" class="btn-secondary">Saber mas</button>
+              <button type="button" class="btn-primary">Comprar</button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Segunda sección: Productos -->
+      <section class="product-section">
+        <div class="product-grid">
+          <div class="product-card">
+            <img
+              src="../imgs/phones/Rectangle 3.png"
+              alt="Imagen de un telefono movil"
+              class="product-card-img"
+            />
+            <h3 class="product-card-name">IPHONE AIR</h3>
+            <p class="product-card-price">$999</p>
+          </div>
+          <div class="product-card">
+            <img
+              src="../imgs/phones/Rectangle 4.png"
+              alt="Imagen de un telefono movil"
+              class="product-card-img"
+            />
+            <h3 class="product-card-name">SAMSUNG GALAXY S25</h3>
+            <p class="product-card-price">$999</p>
+          </div>
+          <div class="product-card">
+            <img
+              src="../imgs/phones/Rectangle 5.png"
+              alt="Imagen de un telefono movil"
+              class="product-card-img"
+            />
+            <h3 class="product-card-name">IPHONE 17</h3>
+            <p class="product-card-price">$999</p>
+          </div>
+          <div class="product-card">
+            <img
+              src="../imgs/phones/Rectangle 6.png"
+              alt="Imagen de un telefono movil"
+              class="product-card-img"
+            />
+            <h3 class="product-card-name">SAMSUNG GALAXY FOLD</h3>
+            <p class="product-card-price">$999</p>
+          </div>
+        </div>
+        <button type="button" class="btn-ver-mas">Ver mas</button>
+      </section>
+      <!-- Sección de Laptops -->
+      <section class="w-full m-0 p-0">
+        <div class="w-full m-0 p-0 relative h-[700px] overflow-hidden">
+          <img
+            src="../imgs/laptops/Apple-MacBook-Pro-2up-231030_Full-Bleed-Image.jpg.large_2x-1067680879.jpg"
+            alt="Image of a Macbook Pro"
+            class="size-full block object-cover"
+          />
+          <div class="absolute top-0 right-0 w-[35%] h-full  flex flex-col justify-center items-center">
+            <h1 class="justify-self-center text-4xl font-bold text-white m-0 mb-5">MACBOOK PRO</h1>
+            <div class="flex gap-4">
+              <button type="button" class="btn-secondary">Saber mas</button>
+              <button type="button" class="btn-primary">Comprar</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="product-section">
+        <div class="product-grid">
+          <div class="product-card">
+            <img
+              src="../imgs/laptops/dellxps.png"
+              alt="Dell XPS"
+              class="product-card-img"
+            />
+            <h3 class="product-card-name">DELL XPS</h3>
+            <p class="product-card-price">$999</p>
+          </div>
+
+          <div class="product-card">
+            <img
+              src="../imgs/laptops/razer-blade.png"
+              alt="Razer Blade"
+              class="product-card-img"
+            />
+            <h3 class="product-card-name">RAZER BLADE</h3>
+            <p class="product-card-price">$999</p>
+          </div>
+
+          <div class="product-card">
+            <img
+              src="../imgs/laptops/rog-asus.png"
+              alt="Asus ROG Strix"
+              class="product-card-img"
+            />
+            <h3 class="product-card-name">ASUS ROG STRIX</h3>
+            <p class="product-card-price">$999</p>
+          </div>
+
+          <div class="product-card">
+            <img
+              src="../imgs/laptops/macbook-air.png"
+              alt="Macbook Air"
+              class="product-card-img"
+            />
+            <h3 class="product-card-name">MACBOOK AIR</h3>
+            <p class="product-card-price">$999</p>
+          </div>
+        </div>
+
+        <button type="button" class="btn-ver-mas">Ver mas</button>
+      </section>
+
+      <!-- Sección de Relojes -->
+      <section class="w-full m-0 p-0">
+        <div class="w-full m-0 p-0 relative h-[600px] overflow-hidden">
+          <img
+            src="../imgs/relojes/Frame 23.png"
+            alt="Image of an Apple Watch"
+            class="size-full block object-cover"
+          />
+          <div class="absolute top-0 justify-self-center w-auto p-2.5 pt-10 flex flex-col justify-center items-center">
+            <h1 class="justify-self-center text-4xl font-bold text-white m-0 mb-5">APPLE WATCH</h1>
+            <div class="flex gap-4">
+              <button class="btn-secondary">Saber mas</button>
+              <button class="btn-primary">Comprar</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="product-section">
+        <div class="product-grid">
+          <div class="product-card">
+            <img
+              src="../imgs/relojes/apple-watch.png"
+              alt="Apple Watch Series 9"
+              class="product-card-img"
+            /> 
+            <h3 class="../watch-card-name">APPLE WATCH SERIES 9</h3>
+            <p class="product-card-price">$399</p>
+          </div>
+
+          <div class="product-card">
+            <img
+              src="../imgs/relojes/apple-watch.png"
+              alt="Apple Watch Ultra"
+              class="product-card-img"
+            />
+            <h3 class="watch-card-name">APPLE WATCH ULTRA</h3>
+            <p class="product-card-price">$799</p>
+          </div>
+
+          <div class="product-card">
+            <img
+              src="../imgs/relojes/apple-watch.png"
+              alt="Apple Watch SE"
+              class="product-card-img"
+            />
+            <h3 class="watch-card-name">APPLE WATCH SE</h3>
+            <p class="product-card-price">$249</p>
+          </div>
+
+          <div class="product-card">
+            <img
+              src="../imgs/relojes/apple-watch.png"
+              alt="Apple Watch Hermès"
+              class="product-card-img"
+            />
+            <h3 class="watch-card-name">APPLE WATCH HERMÈS</h3>
+            <p class="product-card-price">$1,299</p>
+          </div>
+        </div>
+
+        <button type="button" class="btn-ver-mas">Ver mas</button>
+      </section>
+      <section class="py-16 px-10 bg-white flex flex-col mb-20 items-center justify-cente text-base text-center">
+        <h2 class="text-4xl font-bold mb-10 ">Testimonios</h2>
+        <div class="grid gap-10 grid-cols-[repeat(auto-fit,minmax(250px,1fr))] w-[50%] justify-center mb-20 max-w-dvh">
+          <div class="test-card">
+            <h3 class="test-card-name">Jose Rincon</h3>
+            <p class="test-card-desc">
+              “¡El iPhone 17 llegó en menos de 24 horas! La calidad y el precio
+              son increíbles”
+            </p>
+          </div>
+          <div class="test-card">
+            <h3 class="test-card-name">Samuel Marte</h3>
+            <p class="test-card-desc">
+              “Compré mi MacBook Air y el soporte fue excelente. Lo recomiendo
+              totalmente.”
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="flex flex-col items-center justify-center bg-bg-footer w-full text-primary-light">
+      <p class="footer-text">© <span id="current-year"></span> TechTrend. Todos los derechos reservados.</p>
+      <p class="footer-text">Contacto: <a href="mailto:info@techtrend.com" class="hover:underline">info@techtrend.com</a></p>
+    </footer>
+  </body>
+</html>

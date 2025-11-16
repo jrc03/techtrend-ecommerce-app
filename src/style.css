@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
+@import "tailwindcss";
+
+:root {
+    --color-primary: #0055B8;
+    --color-primary-dark: #003D82;
+    /* Más oscuro para mejor contraste */
+    --color-primary-light: #E6F2FF;
+    --color-secondary: #6B7280;
+    /* Gris con buen contraste */
+    --color-text: #1F2937;
+    /* Texto más oscuro para mejor legibilidad */
+    --color-text-light: #4B5563;
+    /* Texto secundario accesible */
+    --color-bg: #FFFFFF;
+    --color-bg-alt: #F9FAFB;
+    --color-shadow: rgba(0, 85, 184, 0.1);
+    /* Colores footer */
+    --color-bg-footer: #333533;
+    --color-secondary-button: rgba(128, 128, 128, 0.8);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    font-family: "Jost", sans-serif;
+}
+
+.icon:active,
+.btnNav:active,
+.btn-primary:active,
+.btn-secondary:active,
+.btn-ver-mas:active {
+    transform: scale(0.95);
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: calc(100% + 15px);
+    right: 0;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+    min-width: 220px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1000;
+    overflow: hidden;
+}
+
+.dropdown-menu.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 20px;
+    color: #2d3748;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    border-left: 3px solid transparent;
+}
+
+.dropdown-item:hover,
+.dropdown-item:focus {
+    background-color: #f7fafc;
+    color: #0094FF;
+    border-left-color: #0094FF;
+    outline: none;
+}
+
+.dropdown-item i {
+    width: 20px;
+    font-size: 1.1rem;
+    text-align: center;
+}
+
+.dropdown-menu::before {
+    content: '';
+    position: absolute;
+    top: -8px;
+    right: 15px;
+    width: 16px;
+    height: 16px;
+    background: white;
+    transform: rotate(45deg);
+    box-shadow: -2px -2px 5px rgba(0, 0, 0, 0.05);
+}
