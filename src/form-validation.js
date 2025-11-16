@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const contrasenaInput = document.getElementById("contrasena");
   const direccionInput = document.getElementById("direccion");
 
- /**
+  /**
    * Muestra un mensaje de error en la UI, asociado a un input.
    * @param {HTMLElement} inputElement - El <input> que tiene el error.
    * @param {string} mensaje - El texto de error que se mostrará.
@@ -18,10 +18,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const errorElement = formGroup.querySelector(".error-message");
 
     errorElement.textContent = mensaje;
-    errorElement.style.display = "block";
+    errorElement.style.visibility = "visible";
 
-    inputElement.classList.add("error");  
-
+    inputElement.classList.add("error");
   }
 
   /**
@@ -35,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const errorElement = formGroup.querySelector(".error-message");
 
     errorElement.textContent = "";
-    errorElement.style.display = "none";
+    errorElement.style.visibility = "hidden";
 
     inputElement.classList.remove("error");
   }
@@ -51,7 +50,6 @@ document.addEventListener("DOMContentLoaded", function () {
       return true;
     }
   }
-
 
   function validarCorreo() {
     const valor = correoInput.value.trim();
@@ -129,8 +127,8 @@ document.addEventListener("DOMContentLoaded", function () {
   correoInput.addEventListener("blur", validarCorreo);
   contrasenaInput.addEventListener("blur", validarContrasena);
 
-  form.addEventListener("submit", function (event) {
-    event.preventDefault();
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
 
     console.log("!Submit interceptado!");
 
@@ -160,4 +158,13 @@ document.addEventListener("DOMContentLoaded", function () {
       console.log("Formulario INVÁLIDO. Revisa los errores.");
     }
   });
+
+  function setFormSimulacion() {
+    if (form) {
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        submitButton = document.getElementById("")
+      });
+    }
+  }
 });

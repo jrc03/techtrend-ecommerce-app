@@ -26,7 +26,7 @@ body {
   --color-secondary-button: rgba(128, 128, 128, 0.8);
   --color-secondary-button-hover: rgba(128, 128, 128, 1);
 
-  /* Todo, add bg to products section */
+  
 }
 .nav-btn {
   @apply bg-transparent border-0 font-semibold p-4 cursor-pointer text-text rounded-lg transition-all hover:bg-primary-light translate-y-[-0.5];
@@ -65,7 +65,7 @@ body {
 }
 
 .product-card-img {
-  @apply w-dvh h-64 object-contain mb-5 h-auto;
+  @apply w-dvh h-auto object-contain mb-5 h-auto;
 }
 
 .product-card-name {
