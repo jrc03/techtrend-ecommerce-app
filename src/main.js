@@ -1,7 +1,6 @@
-import { loadHeader } from "./components";
-
 document.addEventListener("DOMContentLoaded", function () {
   // Cargar el header dinámicamente
+  // @ts-ignore
   loadHeader();
 
   /**
