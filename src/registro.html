@@ -1,101 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TechTrend</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="registro.css" />
+    <link rel="stylesheet" href="output.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script src="components.js"></script>
+    <script src="form-validation.js" defer></script>
+    <script src="main.js"></script>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TechTrend</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="registro.css" />
-  <link rel="stylesheet" href="output.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap"
-    rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  <script src="form-validation.js" defer></script>
-  <script src="main.js"></script>
-</head>
-
-<body class="body min-h-screen flex flex-col">
-  <header
-    class="flex items-center justify-between py-5 px-10 bg-bg-primary sticky top-0 z-1000 shadow-lg"
-  >
-    <div class="flex items-center gap-10">
-      <h2
-        class="font-extrabold text-3xl text-primary tracking-[-0.5px] transition-all duration-300 ease-in-out hover:translate-y-[-0.5px]"
-      >
-        <a href="index.html">TechTrend</a>
-      </h2>
-      <nav class="flex gap-1">
-        <button type="button" class="nav-btn">Comprar</button>
-        <button type="button" class="nav-btn">Teléfonos Móviles</button>
-        <button type="button" class="nav-btn">Laptops</button>
-        <button type="button" class="nav-btn">Relojes</button>
-        <button type="button" class="nav-btn">Soporte</button>
-      </nav>
-    </div>
-
-    <div class="flex gap-2">
-      <button type="button" class="icon" id="search" aria-label="Buscar">
-        <i class="fa-solid fa-magnifying-glass"></i>
-      </button>
-      <button
-        type="button"
-        class="icon"
-        id="user"
-        aria-label="Menú de usuario"
-      >
-        <i class="fa-solid fa-user"></i>
-      </button>
-      <button
-        type="button"
-        class="icon"
-        id="shopping-cart"
-        aria-label="Carrito de compras"
-      >
-        <i class="fa-solid fa-cart-shopping"></i>
-      </button>
-    </div>
-  </header>
-  <main class="bg-(--color-bg-login) flex justify-center items-center py-4 px-5 flex-1">
-    <section class="register w-full max-w-[500px]">
-      <h1 class="text-white text-2xl font-bold text-center mt-0 mb-12">Registro</h1>
-      <form action="" method="post" novalidate class="flex flex-col gap-6">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
-          <div class="form-group flex flex-col gap-1">
-            <label for="nombre" class="text-white text-base font-normal">Nombre</label>
-            <input type="text" id="nombre" name="nombre" required class="border-0 bg-[#595959] rounded-lg p-4 text-white font-[Jost] text-base outline-none transition-colors duration-300 focus:bg-[#6a6a6a] placeholder:text-white/70">
-            <small class="error-message text-[#e74c3c] text-sm mt-1 invisible">.</small>
+  <body class="body min-h-screen flex flex-col">
+    <!-- Header y menú móvil cargados dinámicamente -->
+    <div id="header-container"></div>
+    <main
+      class="bg-(--color-bg-login) flex justify-center items-center py-4 px-5 flex-1"
+    >
+      <section class="register w-full max-w-[500px]">
+        <h1 class="text-white text-2xl font-semibold text-center mt-0 mb-6">
+          Registrarse a TechTrend
+        </h1>
+        <form action="" method="post" novalidate class="flex flex-col gap-6">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+            <div class="form-group flex flex-col gap-1">
+              <label for="nombre" class="text-white text-base font-normal"
+                >Nombre</label
+              >
+              <input
+                type="text"
+                id="nombre"
+                name="nombre"
+                required
+                class="border-0 bg-[#595959] rounded-lg p-4 text-white font-[Jost] text-base outline-none transition-colors duration-300 focus:bg-[#6a6a6a] placeholder:text-white/70"
+              />
+              <small class="error-message text-[#e74c3c] text-sm mt-1 invisible"
+                >.</small
+              >
+            </div>
+            <div class="form-group flex flex-col gap-1">
+              <label for="apellidos" class="text-white text-base font-normal"
+                >Apellidos</label
+              >
+              <input
+                type="text"
+                id="apellidos"
+                name="apellidos"
+                required
+                class="border-0 bg-[#595959] rounded-lg p-4 text-white font-[Jost] text-base outline-none transition-colors duration-300 focus:bg-[#6a6a6a] placeholder:text-white/70"
+              />
+              <small class="error-message text-[#e74c3c] text-sm mt-1 invisible"
+                >.</small
+              >
+            </div>
           </div>
           <div class="form-group flex flex-col gap-1">
-            <label for="apellidos" class="text-white text-base font-normal">Apellidos</label>
-            <input type="text" id="apellidos" name="apellidos" required class="border-0 bg-[#595959] rounded-lg p-4 text-white font-[Jost] text-base outline-none transition-colors duration-300 focus:bg-[#6a6a6a] placeholder:text-white/70">
-            <small class="error-message text-[#e74c3c] text-sm mt-1 invisible">.</small>
+            <label for="correo" class="text-white text-base font-normal"
+              >Correo</label
+            >
+            <input
+              type="email"
+              id="correo"
+              name="correo"
+              required
+              class="border-0 bg-[#595959] rounded-lg p-4 text-white font-[Jost] text-base outline-none transition-colors duration-300 focus:bg-[#6a6a6a] placeholder:text-white/70"
+            />
+            <small class="error-message text-[#e74c3c] text-sm mt-1 invisible"
+              >.</small
+            >
           </div>
-        </div>
-        <div class="form-group flex flex-col gap-1">
-          <label for="correo" class="text-white text-base font-normal">Correo</label>
-          <input type="email" id="correo" name="correo" required class="border-0 bg-[#595959] rounded-lg p-4 text-white font-[Jost] text-base outline-none transition-colors duration-300 focus:bg-[#6a6a6a] placeholder:text-white/70">
-          <small class="error-message text-[#e74c3c] text-sm mt-1 invisible">.</small>
-        </div>
-        <div class="form-group flex flex-col gap-1">
-          <label for="contrasena" class="text-white text-base font-normal">Contraseña</label>
-          <input type="password" name="contrasena" id="contrasena" class="border-0 bg-[#595959] rounded-lg p-4 text-white font-[Jost] text-base outline-none transition-colors duration-300 focus:bg-[#6a6a6a] placeholder:text-white/70">
-          <small class="error-message text-[#e74c3c] text-sm mt-1 invisible">.</small>
-        </div>
-        <div class="form-group flex flex-col gap-1 mb-2">
-          <label for="direccion" class="text-white text-base font-normal">Dirección</label>
-          <input type="text" name="direccion" id="direccion" class="border-0 bg-[#595959] rounded-lg p-4 text-white font-[Jost] text-base outline-none transition-colors duration-300 focus:bg-[#6a6a6a] placeholder:text-white/70">
-          <small class="error-message text-[#e74c3c] text-sm mt-1 invisible">.</small>
-        </div>
-        <button type="submit" class="self-center inline-block bg-primary hover:bg-[#0080dd] text-white font-semibold rounded-full py-3 px-6 w-1/2 transition duration-200 hover:-translate-y-0.5 active:translate-y-0">Enviar</button>
-      </form>
-    </section>
-  </main>
-  <footer class="flex flex-col items-center justify-center bg-bg-footer w-full text-primary-light py-4">
-    <p class="footer-text">© <span id="current-year"></span> TechTrend. Todos los derechos reservados.</p>
-    <p class="footer-text">Contacto: <a href="mailto:info@techtrend.com" class="hover:underline">info@techtrend.com</a></p>
-  </footer>
-</body>
+          <div class="form-group flex flex-col gap-1">
+            <label for="contrasena" class="text-white text-base font-normal"
+              >Contraseña</label
+            >
+            <input
+              type="password"
+              name="contrasena"
+              id="contrasena"
+              class="border-0 bg-[#595959] rounded-lg p-4 text-white font-[Jost] text-base outline-none transition-colors duration-300 focus:bg-[#6a6a6a] placeholder:text-white/70"
+            />
+            <small class="error-message text-[#e74c3c] text-sm mt-1 invisible"
+              >.</small
+            >
+          </div>
+          <div class="form-group flex flex-col gap-1 mb-2">
+            <label for="direccion" class="text-white text-base font-normal"
+              >Dirección</label
+            >
+            <input
+              type="text"
+              name="direccion"
+              id="direccion"
+              class="border-0 bg-[#595959] rounded-lg p-4 text-white font-[Jost] text-base outline-none transition-colors duration-300 focus:bg-[#6a6a6a] placeholder:text-white/70"
+            />
+            <small class="error-message text-[#e74c3c] text-sm mt-1 invisible"
+              >.</small
+            >
+          </div>
+          <button
+          id="submitBtn"  
+            type="submit"
+            class="self-center inline-block bg-primary hover:bg-[#0080dd] text-white font-semibold rounded-full py-3 px-6 w-1/2 transition duration-200 hover:-translate-y-0.5 active:translate-y-0"
+          >
+            Enviar
+          </button>
+        </form>
+      </section>
+    </main>
+    <footer
+      class="flex flex-col items-center justify-center bg-bg-footer w-full text-primary-light py-4"
+    >
+      <p class="footer-text">
+        © <span id="current-year"></span> TechTrend. Todos los derechos
+        reservados.
+      </p>
+      <p class="footer-text">
+        Contacto:
+        <a href="mailto:info@techtrend.com" class="hover:underline"
+          >info@techtrend.com</a
+        >
+      </p>
+    </footer>
+  </body>
 </html>

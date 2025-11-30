@@ -1,22 +1,41 @@
-// main.js - Menú desplegable de usuario (Login/Registro)
-
 document.addEventListener("DOMContentLoaded", function () {
+  // Cargar el header dinámicamente
+  loadHeader();
+
+  /**
+   * Actualiza el año en el footer automáticamente.
+   * @returns {void}
+   */
   function updateFooterYear() {
+    /** @type {HTMLElement | null} */
     const yearSpan = document.getElementById("current-year");
     if (yearSpan) {
-      yearSpan.textContent = new Date().getFullYear();
+      yearSpan.textContent = new Date().getFullYear().toString();
     }
   }
   updateFooterYear();
 
+  /** @type {HTMLElement | null} */
   const userButton = document.getElementById("user");
+  /** @type {HTMLElement | null} */
+  const menuPrincipalDiv = document.getElementById("mobile-menu");
+
+  const menuPrincipalOpen = /** @type {HTMLButtonElement | null} */ (
+    document.getElementById("menu-toggle")
+  );
+  const menuPrincipalClose = /** @type {HTMLButtonElement | null} */ (
+    document.getElementById("menu-close")
+  );
 
   if (!userButton) {
-    console.error("❌ No se encontró el botón de usuario");
+    console.warn("No se encontró el botón de usuario - puede que el header no se haya cargado");
     return;
   }
 
-  // Crear el menú desplegable
+  /**
+   * Crea el menú desplegable de usuario si no existe.
+   * @returns {void}
+   */
   function crearMenuUsuario() {
     // Verificar si ya existe el menú
     if (document.getElementById("user-dropdown")) {
@@ -47,7 +66,11 @@ document.addEventListener("DOMContentLoaded", function () {
     userButton.insertAdjacentElement("afterend", dropdown);
   }
 
-  // Abrir/cerrar el menú
+  /**
+   * Abre o cierra el menú desplegable de usuario.
+   * @param {MouseEvent} e - El evento de click.
+   * @returns {void}
+   */
   function toggleMenuUsuario(e) {
     e.stopPropagation(); // Evitar que el click se propague
 
@@ -58,27 +81,34 @@ document.addEventListener("DOMContentLoaded", function () {
       crearMenuUsuario();
       dropdown = document.getElementById("user-dropdown");
       setTimeout(() => {
-        dropdown.classList.add("show");
-        userButton.setAttribute("aria-expanded", "true");
+        if (dropdown) {
+          dropdown.classList.add("show");
+          userButton.setAttribute("aria-expanded", "true");
+        }
       }, 10);
     } else {
       // Toggle la clase 'show'
       const isOpen = dropdown.classList.toggle("show");
-      userButton.setAttribute("aria-expanded", isOpen);
+      userButton.setAttribute("aria-expanded", isOpen.toString());
     }
   }
 
-  // Cerrar el menú al hacer click fuera
+  /**
+   * Cierra el menú cuando se hace click fuera de él.
+   * @param {MouseEvent} e - El evento de click.
+   * @returns {void}
+   */
   function cerrarMenuUsuario(e) {
     const dropdown = document.getElementById("user-dropdown");
 
     // Si el menú existe y está abierto
     if (dropdown && dropdown.classList.contains("show")) {
       // Verificar que el click NO sea en el botón ni en el menú
+      const target = /** @type {Node} */ (e.target);
       if (
-        !dropdown.contains(e.target) &&
+        !dropdown.contains(target) &&
         e.target !== userButton &&
-        !userButton.contains(e.target)
+        !userButton.contains(target)
       ) {
         dropdown.classList.remove("show");
         userButton.setAttribute("aria-expanded", "false");
@@ -86,7 +116,11 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  // Cerrar el menú con la tecla Escape
+  /**
+   * Cierra el menú cuando se presiona la tecla Escape.
+   * @param {KeyboardEvent} e - El evento de teclado.
+   * @returns {void}
+   */
   function cerrarConEscape(e) {
     if (e.key === "Escape") {
       const dropdown = document.getElementById("user-dropdown");
@@ -96,7 +130,38 @@ document.addEventListener("DOMContentLoaded", function () {
         userButton.setAttribute("aria-expanded", "false");
         userButton.focus(); // Devolver el foco al botón
       }
+
+      // Cerrar menú móvil si está abierto
+      if (
+        menuPrincipalDiv &&
+        !menuPrincipalDiv.classList.contains("opacity-0")
+      ) {
+        closeMenuPrincipal(null);
+        menuPrincipalOpen.focus();
+      }
     }
+  }
+  function openMenuPrincipal(e) {
+    e.stopPropagation();
+
+    // Mostrar menú con animación
+    menuPrincipalDiv.classList.remove("opacity-0", "pointer-events-none");
+    menuPrincipalDiv.classList.add("opacity-100");
+    menuPrincipalDiv.setAttribute("aria-expanded", "true");
+    
+    // Bloquear scroll del body
+    document.body.style.overflow = "hidden";
+  }
+  function closeMenuPrincipal(e) {
+    if (e) e.stopPropagation();
+
+    // Ocultar menú con animación
+    menuPrincipalDiv.classList.add("opacity-0", "pointer-events-none");
+    menuPrincipalDiv.classList.remove("opacity-100");
+    menuPrincipalDiv.setAttribute("aria-expanded", "false");
+    
+    // Restaurar scroll del body
+    document.body.style.overflow = "";
   }
 
   // Configurar atributos ARIA en el botón
@@ -107,4 +172,13 @@ document.addEventListener("DOMContentLoaded", function () {
   userButton.addEventListener("click", toggleMenuUsuario);
   document.addEventListener("click", cerrarMenuUsuario);
   document.addEventListener("keydown", cerrarConEscape);
+
+  menuPrincipalOpen.addEventListener("click", openMenuPrincipal);
+  menuPrincipalClose.addEventListener("click", closeMenuPrincipal);
+
+  // Cerrar menú al hacer clic en un enlace
+  const mobileNavLinks = document.querySelectorAll("#mobile-menu a");
+  mobileNavLinks.forEach((link) => {
+    link.addEventListener("click", closeMenuPrincipal);
+  });
 });

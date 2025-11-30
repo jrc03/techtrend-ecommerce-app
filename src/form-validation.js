@@ -1,44 +1,74 @@
 document.addEventListener("DOMContentLoaded", function () {
+  /** @type {HTMLFormElement | null} */
   const form = document.querySelector(".register form");
-  const nombreInput = document.getElementById("nombre");
-  const apellidosInput = document.getElementById("apellidos");
-  const correoInput = document.getElementById("correo");
-  const contrasenaInput = document.getElementById("contrasena");
-  const direccionInput = document.getElementById("direccion");
+  /** @type {HTMLInputElement | null} */
+  const nombreInput = /** @type {HTMLInputElement} */ (
+    document.getElementById("nombre")
+  );
+  /** @type {HTMLInputElement | null} */
+  const apellidosInput = /** @type {HTMLInputElement} */ (
+    document.getElementById("apellidos")
+  );
+  /** @type {HTMLInputElement | null} */
+  const correoInput = /** @type {HTMLInputElement} */ (
+    document.getElementById("correo")
+  );
+  /** @type {HTMLInputElement | null} */
+  const contrasenaInput = /** @type {HTMLInputElement} */ (
+    document.getElementById("contrasena")
+  );
+  /** @type {HTMLInputElement | null} */
+  const direccionInput = /** @type {HTMLInputElement} */ (
+    document.getElementById("direccion")
+  );
 
   /**
    * Muestra un mensaje de error en la UI, asociado a un input.
-   * @param {HTMLElement} inputElement - El <input> que tiene el error.
+   * @param {HTMLInputElement} inputElement - El <input> que tiene el error.
    * @param {string} mensaje - El texto de error que se mostrará.
+   * @returns {void}
    */
 
   function mostrarError(inputElement, mensaje) {
     const formGroup = inputElement.parentElement;
 
+    /** @type {HTMLElement | null} */
     const errorElement = formGroup.querySelector(".error-message");
 
-    errorElement.textContent = mensaje;
-    errorElement.style.visibility = "visible";
+    if (errorElement) {
+      errorElement.textContent = mensaje;
+      errorElement.style.visibility = "visible";
+    }
 
     inputElement.classList.add("error");
   }
 
   /**
    * Limpia el mensaje de error de un input.
-   * @param {HTMLElement} inputElement - El <input> que queremos limpiar.
+   * @param {HTMLInputElement} inputElement - El <input> que queremos limpiar.
+   * @returns {void}
    */
 
   function limpiarError(inputElement) {
     const formGroup = inputElement.parentElement;
 
+    /** @type {HTMLElement | null} */
     const errorElement = formGroup.querySelector(".error-message");
 
-    errorElement.textContent = "";
-    errorElement.style.visibility = "hidden";
+    if (errorElement) {
+      errorElement.textContent = "";
+      errorElement.style.visibility = "hidden";
+    }
 
     inputElement.classList.remove("error");
   }
 
+  /**
+   * Valida que un campo no esté vacío.
+   * @param {HTMLInputElement} inputElement - El input a validar.
+   * @param {string} nombreCampo - El nombre del campo para mostrar en el error.
+   * @returns {boolean} - True si el campo es válido, false si está vacío.
+   */
   function validarCampoRequerido(inputElement, nombreCampo) {
     const valor = inputElement.value.trim();
 
@@ -51,6 +81,10 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
+  /**
+   * Valida el formato del correo electrónico.
+   * @returns {boolean} - True si el correo es válido, false si no lo es.
+   */
   function validarCorreo() {
     const valor = correoInput.value.trim();
 
@@ -71,6 +105,10 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
+  /**
+   * Valida que la contraseña cumpla con los requisitos de seguridad.
+   * @returns {boolean} - True si la contraseña es válida, false si no cumple los requisitos.
+   */
   function validarContrasena() {
     const valor = contrasenaInput.value.trim();
 
@@ -159,11 +197,32 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
+  /**
+   * Configura la simulación del formulario.
+   * @returns {void}
+   */
   function setFormSimulacion() {
     if (form) {
       form.addEventListener("submit", (e) => {
         e.preventDefault();
-        submitButton = document.getElementById("")
+
+        const submitButton = /** @type {HTMLButtonElement} */ (
+          document.getElementById("submitBtn")
+        );
+
+        if (submitButton) {
+          const originalButton = submitButton.textContent;
+
+          submitButton.textContent = "Procesando...";
+          submitButton.disabled = true;
+
+          setTimeout(() => {
+            alert("¡Registro realizado! (Simulacion)");
+            submitButton.textContent = originalButton;
+            submitButton.disabled = false;
+            form.reset();
+          }, 1500);
+        }
       });
     }
   }

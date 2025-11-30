@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "target": "ES6",
+    "module": "ESNext",
+    "checkJs": true,
+    "moduleResolution": "node",
+    "lib": ["ES2020", "DOM"],
+    "allowSyntheticDefaultImports": true,
+    "strictNullChecks": false,
+    "strictFunctionTypes": false
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist"]
+}
