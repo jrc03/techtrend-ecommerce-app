@@ -29,7 +29,9 @@ document.addEventListener("DOMContentLoaded", function () {
   );
 
   if (!userButton) {
-    console.warn("No se encontró el botón de usuario - puede que el header no se haya cargado");
+    console.warn(
+      "No se encontró el botón de usuario - puede que el header no se haya cargado"
+    );
     return;
   }
 
@@ -149,7 +151,7 @@ document.addEventListener("DOMContentLoaded", function () {
     menuPrincipalDiv.classList.remove("opacity-0", "pointer-events-none");
     menuPrincipalDiv.classList.add("opacity-100");
     menuPrincipalDiv.setAttribute("aria-expanded", "true");
-    
+
     // Bloquear scroll del body
     document.body.style.overflow = "hidden";
   }
@@ -160,7 +162,7 @@ document.addEventListener("DOMContentLoaded", function () {
     menuPrincipalDiv.classList.add("opacity-0", "pointer-events-none");
     menuPrincipalDiv.classList.remove("opacity-100");
     menuPrincipalDiv.setAttribute("aria-expanded", "false");
-    
+
     // Restaurar scroll del body
     document.body.style.overflow = "";
   }
@@ -182,4 +184,28 @@ document.addEventListener("DOMContentLoaded", function () {
   mobileNavLinks.forEach((link) => {
     link.addEventListener("click", closeMenuPrincipal);
   });
+
+  //@ts-ignore
+  loadScrollToTop();
+
+  const scrollToTopBtn = document.getElementById("scroll-to-top");
+
+  function toggleScrollButton() {
+    if (window.scrollY > 300) {
+      scrollToTopBtn.classList.remove("opacity-0", "pointer-events-none");
+      scrollToTopBtn.classList.add("opacity-100");
+    } else {
+      scrollToTopBtn.classList.add("opacity-0", "pointer-events-none");
+      scrollToTopBtn.classList.remove("opacity-100");
+    }
+  }
+
+  function scrollToTop() {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }
+  window.addEventListener("scroll", toggleScrollButton);
+  scrollToTopBtn.addEventListener("click", scrollToTop);
 });

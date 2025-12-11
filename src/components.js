@@ -58,7 +58,7 @@ function getMobileMenuHTML() {
     >
       <button
         type="button"
-        class="absolute top-6 right-6 p-3 text-2xl text-white rounded-lg transition-all duration-300 ease-in-out hover:bg-white/20 hover:-translate-y-0.5"
+        class="absolute top-6 right-6 p-3 text-2xl text-white rounded-lg transition-all duration-300 ease-in-out hover:bg-red-600/70 hover:-translate-y-0.5"
         id="menu-close"
       >
         <i class="fa-solid fa-xmark"></i>
@@ -88,4 +88,30 @@ function loadHeader() {
 // Exportar para uso en otros archivos (si se usa como módulo)
 if (typeof module !== "undefined" && module.exports) {
   module.exports = { getHeaderHTML, getMobileMenuHTML, loadHeader };
+}
+
+function getScrollToTopHTML() {
+  return `<button
+  id="scroll-to-top"
+  type="button"
+  class="fixed bottom-6 right-6 size-12 rounded-full bg-primary text-white 
+         shadow-lg cursor-pointer z-50
+         flex items-center justify-center
+         opacity-0 pointer-events-none
+         transition-all duration-300 ease-in-out
+         hover:bg-primary-dark hover:-translate-y-1 hover:shadow-xl"
+  aria-label="Volver arriba"
+>
+  <i class="fa-solid fa-arrow-up text-lg"></i>
+</button>`;
+}
+
+/**
+ * Inyecta el botón de scroll to top en la página
+ */
+function loadScrollToTop() {
+  const scrollContainer = document.getElementById("scroll-btn-container");
+  if (scrollContainer) {
+    scrollContainer.innerHTML = getScrollToTopHTML();
+  }
 }
