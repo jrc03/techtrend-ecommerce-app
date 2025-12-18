@@ -208,4 +208,54 @@ document.addEventListener("DOMContentLoaded", function () {
   }
   window.addEventListener("scroll", toggleScrollButton);
   scrollToTopBtn.addEventListener("click", scrollToTop);
+
+  /**
+   * The function `handleHeaderScroll` adjusts the position of the header based on the user's scrolling
+   * behavior on the webpage.
+   * @returns The function `handleHeaderScroll` returns `undefined` because there is no explicit return
+   * value specified in the function.
+   */
+
+  const header = document.querySelector("#header-container header");
+  let lastScrollY = window.scrollY;
+
+  function handleHeaderScroll() {
+    const currentScrollY = window.scrollY;
+
+    if (currentScrollY < 100) {
+      header.classList.remove("-translate-y-full");
+      lastScrollY = currentScrollY;
+      return;
+    }
+
+    if (currentScrollY > lastScrollY) {
+      header.classList.add("-translate-y-full");
+    } else {
+      header.classList.remove("-translate-y-full");
+    }
+
+    lastScrollY = currentScrollY;
+  }
+  window.addEventListener("scroll", handleHeaderScroll);
+
+  const faqQuestions = document.querySelectorAll(".faq-question");
+
+  function toggleFAQ(e) {
+    const clickedItem = e.currentTarget.parentElement;
+
+    const isActive = clickedItem.classList.contains("active");
+
+    const allFaqItems = document.querySelectorAll(".faq-item");
+    allFaqItems.forEach((item) => {
+      item.classList.remove("active");
+    });
+
+    if (!isActive) {
+      clickedItem.classList.add("active");
+    }
+  }
+
+  faqQuestions.forEach((question) => {
+    question.addEventListener("click", toggleFAQ);
+  });
 });

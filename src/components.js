@@ -9,7 +9,7 @@
  */
 function getHeaderHTML() {
   return `
-    <header class="flex items-center justify-between py-5 px-10 bg-bg-primary sticky top-0 z-1000 shadow-lg">
+    <header class="flex items-center justify-between py-5 px-10 bg-bg-primary fixed w-full top-0 z-1000 shadow-lg transition-transform duration-300">
       <div class="flex items-center gap-4 lg:gap-10">
         <button
           type="button"

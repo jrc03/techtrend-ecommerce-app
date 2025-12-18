@@ -89,6 +89,52 @@ body {
     @apply text-base font-light text-[#2d3748] m-0;
   }
 
+
+.faq-item {
+  @apply w-full border-b border-gray-300;
+}
+
+.faq-question {
+  @apply w-full flex justify-between items-center py-4 px-4 
+         bg-transparent border-none cursor-pointer
+         text-lg font-semibold text-text text-left
+         transition-all duration-300 ease-in-out
+         hover:text-primary;
+}
+
+.faq-question i {
+  @apply transition-transform duration-300 ease-in-out;
+}
+
+.faq-item.active .faq-question i {
+  @apply rotate-180;
+}
+
+.faq-answer {
+  @apply max-h-0 overflow-hidden 
+         transition-all duration-300 ease-in-out;
+}
+
+.faq-item.active .faq-answer {
+  @apply max-h-40 pb-4 px-4;
+}
+
+.faq-answer p {
+  @apply text-text-light leading-relaxed;
+}
+
+.faq-container {
+  @apply max-w-3xl mx-auto py-10;
+}
+
+.faq-section {
+  @apply py-16 px-10 bg-bg-products;
+}
+
+.faq-section h2 {
+  @apply text-3xl font-bold text-center mb-8;
+}
+
   .footer-text {
     @apply text-sm m-0 p-2.5;
   }
